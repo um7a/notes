@@ -1,6 +1,6 @@
 # notes
 
-Source code of [https://um7a.github.io/notes/blog].
+Source code of <https://um7a.github.io/notes/blog>.
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
