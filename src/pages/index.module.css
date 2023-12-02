@@ -11,6 +11,10 @@
   --ifm-hero-background-color: #1b1b1d;
 }
 
+.navbar-item-icon {
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 997px) {
   .container {
   }

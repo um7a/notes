@@ -58,9 +58,9 @@ const config: Config = {
     navbar: {
       items: [
         {
-          to: "/",
-          activeBaseRegex: "^/$",
-          label: "Home",
+          to: "/notes/",
+          activeBaseRegex: "^/notes/$",
+          html: `<img class="navbar-item-icon" src="img/home.svg"/>Home`,
           position: "left",
         },
         // {
@@ -72,17 +72,17 @@ const config: Config = {
         {
           to: "/blog",
           activeBaseRegex: "/blog$",
-          label: "Blog",
+          html: `<img class="navbar-item-icon" src="img/blog.svg"/>Blog`,
           position: "left",
         },
         {
           to: "https://um7a.github.io/notes/blog/rss.xml",
-          label: "RSS",
+          html: `<img class="navbar-item-icon" src="img/rss.svg"/>RSS`,
           position: "left",
         },
         {
           to: "https://github.com/um7a/notes",
-          label: "GitHub",
+          html: `<img class="navbar-item-icon" src="img/source_code.svg"/>Source Code`,
           position: "left",
         },
       ],
