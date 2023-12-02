@@ -74,7 +74,7 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/blog/rss.xml",
+          to: "https://um7a.github.io/notes/blog/rss.xml",
           label: "RSS",
           position: "left",
         },
