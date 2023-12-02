@@ -52,7 +52,10 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    colorMode: {
+      defaultMode: "dark",
+    },
+    image: "https://github.com/um7a.png",
     navbar: {
       items: [
         {
