@@ -22,20 +22,44 @@
 
 @media screen and (min-width: 997px) {
   .navbar {
-    padding: var(--ifm-navbar-padding-vertical) 300px;
+    padding: var(--ifm-navbar-padding-vertical) 280px;
+  }
+
+  a.navbar__item.navbar__link {
+    display: flex;
+    align-items: center;
+  }
+
+  a.navbar__item.navbar__link img.navbar-item-icon {
+    padding-right: 3px;
+    width: 18px;
+    height: 18px;
+  }
+
+  [data-theme="dark"] a.navbar__item.navbar__link img.navbar-item-icon {
+    filter: invert(100%);
   }
 }
 
-a.navbar__item.navbar__link {
-  display: flex;
-  align-items: center;
-}
+@media screen and (max-width: 996px) {
+  a.navbar__item {
+    display: none;
+  }
 
-a.navbar__item.navbar__link img.navbar-item-icon {
-  padding-right: 3px;
-  filter: invert(100%);
-  width: 18px;
-  height: 18px;
+  a.menu__link {
+    display: flex;
+    align-items: center;
+  }
+
+  a.menu__link img.navbar-item-icon {
+    padding-right: 8px;
+    width: 22px;
+    height: 22px;
+  }
+
+  [data-theme="dark"] a.menu__link img.navbar-item-icon {
+    filter: invert(100%);
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
