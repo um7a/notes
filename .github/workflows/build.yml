@@ -1,0 +1,32 @@
+name: Build CI
+
+on:
+  push:
+    branches: [main]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/configure-pages@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm ci
+      #- run: npm test
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: "./build/"
+      - uses: actions/deploy-pages@main
