@@ -55,7 +55,6 @@ const config: Config = {
     colorMode: {
       defaultMode: "dark",
     },
-    image: "https://github.com/um7a.png",
     navbar: {
       items: [
         {
