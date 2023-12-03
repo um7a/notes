@@ -60,7 +60,7 @@ const config: Config = {
         {
           to: "/notes/",
           activeBaseRegex: "^/notes/$",
-          html: `<img class="navbar-item-icon" src="img/home.svg"/>Home`,
+          html: `<img class="navbar-item-icon" src="https://um7a.github.io/notes/img/home.svg"/>Home`,
           position: "left",
         },
         // {
@@ -72,17 +72,17 @@ const config: Config = {
         {
           to: "/blog",
           activeBaseRegex: "/blog$",
-          html: `<img class="navbar-item-icon" src="img/blog.svg"/>Blog`,
+          html: `<img class="navbar-item-icon" src="https://um7a.github.io/notes/img/blog.svg"/>Blog`,
           position: "left",
         },
         {
           to: "https://um7a.github.io/notes/blog/rss.xml",
-          html: `<img class="navbar-item-icon" src="img/rss.svg"/>RSS`,
+          html: `<img class="navbar-item-icon" src="https://um7a.github.io/notes/img/rss.svg"/>RSS`,
           position: "left",
         },
         {
           to: "https://github.com/um7a/notes",
-          html: `<img class="navbar-item-icon" src="img/source_code.svg"/>Source Code`,
+          html: `<img class="navbar-item-icon" src="https://um7a.github.io/notes/img/source_code.svg"/>Source Code`,
           position: "left",
         },
       ],
