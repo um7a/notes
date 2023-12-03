@@ -1,5 +1,7 @@
 # notes
 
+![Build CI](https://github.com/um7a/notes/actions/workflows/build.yml/badge.svg?branch=main)
+
 Source code of <https://um7a.github.io/notes>.
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
