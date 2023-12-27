@@ -95,3 +95,19 @@
   --ifm-link-color: #25c2a0;
   --ifm-link-decoration: none;
 }
+
+blockquote p {
+  color: rgb(170, 170, 170);
+}
+
+blockquote a {
+  color: rgb(124, 124, 124);
+}
+
+[data-theme="dark"] blockquote p {
+  color: rgb(69, 69, 69);
+}
+
+[data-theme="dark"] blockquote a {
+  color: rgb(93, 93, 93);
+}
