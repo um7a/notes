@@ -69,7 +69,7 @@ sudo nmtui
 1. `Edit a connection` を選択。
 2. Static IP address を設定したいネットワークを選択。
 3. `IPv4 CONFIGURATION` の欄で `<Show>` を選択。
-4. `Addresses` `Gateway` `DNS servers` を設定。なお `Addresses` は `192.168.0.10/24` のように記述できる。
+4. `Addresses` `Gateway` `DNS servers` を設定。<br/>なお `Addresses` は `192.168.0.10/24` のように記述できる。
 5. 設定が完了したら `<OK>` を選択。
 6. `Back` > `Quit` の順で選択して終了する。
 
