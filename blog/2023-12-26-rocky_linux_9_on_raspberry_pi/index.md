@@ -250,10 +250,10 @@ sudo nmtui
 5. 設定が完了したら `<OK>` を選択。
 6. `Back` > `Quit` の順で選択して終了する。
 
-Static IP address の設定を読み込むため、再起動する。
+Static IP address の設定を読み込むため、NetworkManager を再起動する。
 
 ```bash
-sudo reboot -h now
+sudo systemctl restart NetworkManager.service
 ```
 
 ## SSH 接続の確認
@@ -276,6 +276,50 @@ SSH で接続できることを確認する。
 ssh rocky@192.168.0.10
 ```
 
+## パーティションの変更
+
+初期ユーザー rocky のホームディレクトリにある README に以下の記載があるように、デフォルトのパーティションでは rootfs に 2800 MB しか割り当てられていない。
+
+> Partitions are 300 MB /boot , 512 MB swap, 2800 MB rootfs. Requires a 4 GB or larger storage device to serve as your disk
+
+実際にディスクの使用率を確認してみると、既に / 用のパーティションを 45 % も使用している状態。
+
+```bash
+$ df -Th
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/root      ext4      2.5G  1.1G  1.4G  45% /
+devtmpfs       devtmpfs  421M     0  421M   0% /dev
+tmpfs          tmpfs     455M     0  455M   0% /dev/shm
+tmpfs          tmpfs     182M  3.5M  179M   2% /run
+/dev/mmcblk0p1 vfat      286M   95M  192M  34% /boot
+tmpfs          tmpfs      91M     0   91M   0% /run/user/1000
+```
+
+これではすぐに容量を使い切ってしまうので、同じく README にある以下の説明の通り `sudo rootfs-expand` コマンドを実行してパーティションを拡大する。
+
+> GROW YOUR PARTITION:  
+> If you want to automatically resize your root (/ ) partition, just type the following (as root user):
+> sudo rootfs-expand  
+> It should fill your main rootfs partition to the end of the disk.
+
+```bash
+sudo rootfs-expand
+```
+
+再度ディスクの容量を確認すると、/ 用のパーティションが大きくなっていることがわかる。
+
+```bash
+$ df -Th
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/root      ext4      117G  1.1G  116G   1% /
+devtmpfs       devtmpfs  421M     0  421M   0% /dev
+tmpfs          tmpfs     455M     0  455M   0% /dev/shm
+tmpfs          tmpfs     182M  3.5M  179M   2% /run
+/dev/mmcblk0p1 vfat      286M   95M  192M  34% /boot
+tmpfs          tmpfs      91M     0   91M   0% /run/user/1000
+```
+
 ## 参考
 
 - [https://raspberrytips.com/rocky-linux-raspberry-pi/](https://raspberrytips.com/rocky-linux-raspberry-pi/)
+- [https://alldrops.info/posts/linux-drops/2022-05-11_install-rocky-linux-on-raspberry-pi-for-remote-access/](https://alldrops.info/posts/linux-drops/2022-05-11_install-rocky-linux-on-raspberry-pi-for-remote-access/)
