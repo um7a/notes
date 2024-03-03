@@ -15,7 +15,13 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className={clsx(styles.profileItem)}>
+          <img
+            className={clsx(styles.itemIcon)}
+            src="https://um7a.github.io/notes/img/maker-pin-01.svg"
+          ></img>
+          Japan
+        </p>
       </div>
     </header>
   );

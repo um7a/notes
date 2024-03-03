@@ -11,27 +11,27 @@
   --ifm-hero-background-color: #1b1b1d;
 }
 
-@media screen and (min-width: 997px) {
-  .icon {
-    height: 150px;
-    width: 150px;
-  }
-}
-
 .icon {
   border-radius: 50%;
   border: 2px solid #282828;
   border: 2px solid #f5f5f5;
 }
 
-@media screen and (min-width: 997px) {
-}
-
 .heroBanner {
-  padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+@media screen and (min-width: 997px) {
+  .heroBanner {
+    padding: 4rem;
+  }
+
+  .icon {
+    height: 150px;
+    width: 150px;
+  }
 }
 
 @media screen and (max-width: 996px) {
@@ -49,4 +49,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.profileItem {
+  font-size: 24px;
+  margin: 0 0 0 0;
+}
+
+.itemIcon {
+  filter: invert(100%);
+  padding-top: 10px;
+  padding-right: 4px;
+  width: 27px;
+  height: 27px;
 }
