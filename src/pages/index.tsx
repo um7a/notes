@@ -18,7 +18,7 @@ function HomepageHeader() {
         <p className={clsx(styles.profileItem)}>
           <img
             className={clsx(styles.itemIcon)}
-            src="https://um7a.github.io/notes/img/maker-pin-01.svg"
+            src="https://um7a.github.io/notes/img/marker-pin-01.svg"
           ></img>
           Japan
         </p>
